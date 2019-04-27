@@ -11,7 +11,7 @@
 #include"animation.h"
 #include"time.h"
 #include"jump.h"
-
+//aywaaach
 
 
 int main(void)
