@@ -11,9 +11,7 @@
 #include"animation.h"
 #include"time.h"
 #include"jump.h"
-//fraj miboun
 
-//test
 
 
 int main(void)
