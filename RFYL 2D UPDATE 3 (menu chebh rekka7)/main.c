@@ -13,7 +13,7 @@
 #include"jump.h"
 
 
-
+//test 
 
 
 int main(void)
@@ -49,7 +49,7 @@ int deplacement_horizentale_enemy;
 
 
 		 int numkeys;
-    
+
     Uint8 * keys;
 
 //Définition des structures :
@@ -59,7 +59,7 @@ menu menu;
 animation perso1;
 Enemy_anim enemy;
 object obj;
-HUD ATH;		
+HUD ATH;
 
 
 //Declaration des couleurs en RGB :
@@ -117,14 +117,14 @@ k=menu_jeux(&menu);
 if(k==1)
 {
 
-	
+
 
 	t1 = SDL_GetTicks();
 
 //Création de la fenêtre (le win.screen) :
 	prepare_window(&win);
 	Load_Resources(&perso1);
-	
+
 
 	font = loadFont("DFTEH.ttf", 32);
 	police = TTF_OpenFont("DFTEH.ttf", 50);
@@ -140,7 +140,7 @@ if(k==1)
 	positionennemi.x=500;
 	positionennemi.y=450;
 
-	
+
 deplacement_horizentale_enemy=500;
 
 //Loading ressources :
@@ -153,7 +153,7 @@ LoadRessources_Object(&obj);
 //Blit initiale des images :
 	SDL_BlitSurface(BGnd.B_grndMask,NULL, win.screen , &BGnd.posB_grnd);
 	SDL_BlitSurface(BGnd.B_grnd,NULL, win.screen , &BGnd.posB_grnd);
-	
+
 	SDL_BlitSurface(texte, NULL, win.screen, 0);
 	SDL_BlitSurface(perso1.tsawer[1],NULL, win.screen , &perso1.pos_Sprite);
 	SDL_Flip(win.screen);
@@ -183,9 +183,9 @@ LoadRessources_Object(&obj);
 		test_collision = collision_Parfaite(BGnd.B_grndMask ,perso1.tsawer[i] , perso1.pos_Sprite , perso1.direct , &BGnd);
 
 	//La variable perso.direct est reourner pour recupérer la condition pour la position du pixel à comparer avec le masque du background dans la fonction collision_Parfaite :
-		
+
 		Evolue(&perso1,keys ,&i ,&perso1.direct ,&BGnd , test_collision);
-		
+
 		//test_collision=0; // :Rafraichir la variable de test de collision à chaque tour de boucle :
 
 		if(i==3)
@@ -200,11 +200,11 @@ LoadRessources_Object(&obj);
 			if (test==0)
            	{
 				if(deplacement_horizentale_enemy<position_save)
-				{			  
-				 afficher_objetx(  deplacement_horizentale_enemy - BGnd.posB_grnd.x, positionennemi.y, enemy.enemy_Right[j] ,win.screen); 
+				{
+				 afficher_objetx(  deplacement_horizentale_enemy - BGnd.posB_grnd.x, positionennemi.y, enemy.enemy_Right[j] ,win.screen);
 				}
 				if(deplacement_horizentale_enemy>position_save)
-				{		  
+				{
 					 afficher_objetx(deplacement_horizentale_enemy - BGnd.posB_grnd.x, positionennemi.y, enemy.enemy_Left[j] ,win.screen);
 				}
     		}
@@ -259,7 +259,7 @@ LoadRessources_Object(&obj);
 			SDL_Flip(win.screen);
 		}
 
-		else 
+		else
 		{
 			SDL_BlitSurface(BGnd.B_grndMask,&BGnd.posB_grnd, win.screen , NULL);
 			SDL_BlitSurface(BGnd.B_grnd,&BGnd.posB_grnd, win.screen , NULL);
@@ -271,7 +271,7 @@ LoadRessources_Object(&obj);
 
 				afficher_objetx(deplacement_horizentale_enemy - BGnd.posB_grnd.x, positionennemi.y, enemy.enemy_Right[j] ,win.screen);
 				}
-				
+
 			    else if(deplacement_horizentale_enemy>position_save)
 				{
 				afficher_objetx(deplacement_horizentale_enemy - BGnd.posB_grnd.x, positionennemi.y, enemy.enemy_Left[j] ,win.screen);
@@ -328,7 +328,7 @@ pos.x-=BGnd.posB_grnd.x;
 			etoiles+=5;
 		}
 	}
-	
+
 if(s==0)
 	{
 positionennemi.x=deplacement_horizentale_enemy;
